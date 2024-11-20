@@ -1,0 +1,33 @@
+services:
+  file-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    volumes:
+      - ./uploads:/app/uploads
+
+    ports:
+      - 8000:8000
+    depends_on:
+      - file-database
+
+  file-database:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example
+    volumes:
+      - pgdata:/var/lib/postgresql/data 
+ 
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    depends_on:
+      - file-database
+ 
+volumes:
+  uploads:
+  pgdata:
