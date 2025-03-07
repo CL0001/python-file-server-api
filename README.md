@@ -21,7 +21,7 @@ To run this project, the only requirement is **Docker**, thanks to the container
 ## How to Run
 First, clone this repository to your desired location:
 ```
-git clone https://github.com/CL0001/opencv-auto-build.git
+git clone https://github.com/CL0001/python-file-server-api.git
 ```
 Alternatively, you can download it as a .zip file.
 
